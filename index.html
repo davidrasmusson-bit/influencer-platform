@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Influencer Platform | Raincode × Aram Fili</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--s1:#f7f8fa;--s2:#f0f2f6;
+  --blue:#2E62D9;--blue2:#1a3f9e;--bdim:rgba(46,98,217,0.09);--bdim2:rgba(46,98,217,0.18);
+  --tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;
+  --red:#c41a1a;--grn:#16a34a;
+  --sh:0 1px 3px rgba(14,20,45,.08),0 4px 16px rgba(14,20,45,.05);
+  --ez:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;background:var(--bg);}
+body{font-family:"DM Sans",sans-serif;color:var(--tx);}
+
+/* NAV */
+#mnav{position:fixed;top:0;left:0;right:0;z-index:9999;height:48px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--br);display:flex;align-items:center;padding:0 20px;gap:0;backdrop-filter:blur(16px);}
+.nbrand{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--t3);margin-right:20px;display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.nbrand-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);}
+.ntabs{display:flex;gap:2px;flex:1;overflow-x:auto;}
+.ntabs::-webkit-scrollbar{display:none;}
+.ntab{padding:6px 13px;border-radius:5px;font-size:11px;font-weight:500;color:var(--t3);cursor:pointer;border:none;background:none;font-family:"DM Sans",sans-serif;transition:all .2s;white-space:nowrap;flex-shrink:0;}
+.ntab:hover{color:var(--t2);background:var(--s1);}
+.ntab.active{color:var(--blue);background:var(--bdim);font-weight:600;}
+
+/* PROGRESS */
+#mpb{position:fixed;top:48px;left:0;right:0;height:2px;z-index:9998;}
+#mpbf{height:100%;background:linear-gradient(90deg,var(--blue),#6fa3f5);transition:width .4s var(--ez);}
+
+/* FRAMES */
+#ifl{position:fixed;top:50px;left:0;right:0;bottom:0;}
+.sframe{position:absolute;inset:0;border:none;width:100%;height:100%;display:none;}
+.sframe.active{display:block;}
+</style>
+</head>
+<body>
+
+<nav id="mnav">
+  <div class="nbrand"><span class="nbrand-dot"></span>Raincode × Aram Fili</div>
+  <div class="ntabs">
+    <button class="ntab active" onclick="sw(0)">Cover</button>
+    <button class="ntab" onclick="sw(1)">Overview</button>
+    <button class="ntab" onclick="sw(2)">The Market</button>
+    <button class="ntab" onclick="sw(3)">Competitors</button>
+    <button class="ntab" onclick="sw(4)">What's Missing</button>
+    <button class="ntab" onclick="sw(5)">Aram's Vision</button>
+    <button class="ntab" onclick="sw(6)">Aram's Features</button>
+    <button class="ntab" onclick="sw(7)">Raincode Ideas</button>
+    <button class="ntab" onclick="sw(8)">The Differentiator</button>
+    <button class="ntab" onclick="sw(9)">The Phases</button>
+    <button class="ntab" onclick="sw(10)">Key Questions</button>
+    <button class="ntab" onclick="sw(11)">Next Steps</button>
+  </div>
+</nav>
+<div id="mpb"><div id="mpbf" style="width:10%"></div></div>
+
+<div id="ifl">
+
+<!-- SLIDE 0: COVER -->
+<iframe class="sframe active" id="sf-0" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;display:grid;grid-template-columns:1fr 1fr;}
+.left{display:flex;flex-direction:column;justify-content:center;padding:64px 60px;border-right:1px solid var(--br);position:relative;}
+.right{display:flex;flex-direction:column;justify-content:center;padding:64px 60px;background:var(--s1);position:relative;overflow:hidden;}
+.right-grid{position:absolute;inset:0;background-image:linear-gradient(var(--br) 1px,transparent 1px),linear-gradient(90deg,var(--br) 1px,transparent 1px);background-size:44px 44px;opacity:.5;pointer-events:none;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:28px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(44px,5.5vw,72px);line-height:.95;letter-spacing:-.02em;margin-bottom:24px;color:var(--tx);}
+h1 em{font-style:italic;color:var(--blue);}
+h1 .dim{color:var(--b2);}
+.sub{font-size:13px;color:var(--t3);line-height:1.75;max-width:400px;margin-bottom:36px;}
+.meta-grid{border:1px solid var(--br);border-radius:10px;overflow:hidden;background:#fff;}
+.meta-item{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid var(--br);}
+.meta-item:last-child{border-bottom:none;}
+.ml{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--b2);}
+.mv{font-size:13px;font-weight:600;color:var(--t2);}
+.mv.hl{color:var(--blue);font-family:'DM Serif Display',serif;font-size:16px;}
+.mark{position:absolute;bottom:20px;left:60px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--b2);}
+.stat-stack{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;}
+.stat{background:#fff;border:1px solid var(--br);border-radius:12px;padding:22px 24px;box-shadow:0 1px 3px rgba(14,20,45,.06),0 4px 16px rgba(14,20,45,.04);position:relative;overflow:hidden;border-left:3px solid var(--blue);}
+.sn{font-family:'DM Serif Display',serif;font-size:44px;color:var(--blue);line-height:1;margin-bottom:4px;}
+.sl{font-size:12px;color:var(--t3);line-height:1.5;}
+.ss{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--b2);margin-top:5px;text-transform:uppercase;letter-spacing:.12em;}
+@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.a{opacity:0;animation:fu .6s cubic-bezier(.4,0,.2,1) forwards;}
+.d1{animation-delay:.08s;}.d2{animation-delay:.2s;}.d3{animation-delay:.34s;}.d4{animation-delay:.48s;}.d5{animation-delay:.62s;}
+</style></head><body>
+<div id='root'>
+  <div class='left'>
+    <div class='eye a d1'>The Influencer Platform · April 2026</div>
+    <h1 class='a d2'>The<br><em>World's Best</em><br><span class='dim'>Influencer</span><br><span class='dim'>Platform.</span></h1>
+    <p class='sub a d3'>A complete rebuild — two-sided marketplace, AI at its core, built for agencies managing hundreds of campaigns simultaneously.</p>
+    <div class='meta-grid a d4'>
+      <div class='meta-item'><span class='ml'>Client</span><span class='mv'>Aram Fili</span></div>
+      <div class='meta-item'><span class='ml'>Built by</span><span class='mv'>Raincode</span></div>
+      <div class='meta-item'><span class='ml'>Meeting date</span><span class='mv'>March 30, 2026</span></div>
+      <div class='meta-item'><span class='ml'>Market size 2025</span><span class='mv hl'>$32.55B</span></div>
+    </div>
+    <div class='mark'>Raincode × Aram Fili</div>
+  </div>
+  <div class='right'>
+    <div class='right-grid'></div>
+    <div class='stat-stack'>
+      <div class='stat a d3'>
+        <div class='sn' id='s1'>0</div>
+        <div class='sl'>projected global influencer marketing spend by 2025 — growing to $70B+ by 2032</div>
+        <div class='ss'>Market opportunity</div>
+      </div>
+      <div class='stat a d4'>
+        <div class='sn' id='s2'>0%</div>
+        <div class='sl'>of influencer marketing operations still involve significant manual work — the platform eliminates this</div>
+        <div class='ss'>The problem we solve</div>
+      </div>
+      <div class='stat a d5'>
+        <div class='sn' id='s3'>0</div>
+        <div class='sl'>AI features built into the platform from day one — not bolted on after the fact</div>
+        <div class='ss'>Our approach</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function cnt(id,t,p,s,d){
+  var el=document.getElementById(id);if(!el)return;var st=null;
+  function step(ts){if(!st)st=ts;var pr=Math.min((ts-st)/d,1);var e=1-Math.pow(1-pr,3);
+    el.textContent=p+Math.round(e*t)+s;if(pr<1)requestAnimationFrame(step);}
+  setTimeout(function(){requestAnimationFrame(step);},700);
+}
+cnt('s1',32,'$','.55B',1500);cnt('s2',80,'','%',1300);cnt('s3',14,'','',900);
+</script>
+</body></html>"></iframe>
+
+<!-- SLIDE 1: OVERVIEW -->
+<iframe class="sframe" id="sf-1" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--bdim2:rgba(46,98,217,0.14);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--s2:#f0f2f6;--red:#c41a1a;--grn:#16a34a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(30px,3.8vw,46px);line-height:1.05;margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);max-width:680px;line-height:1.75;margin-bottom:36px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+.kpi{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:20px;position:relative;overflow:hidden;}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);}
+.kpi-n{font-family:'DM Serif Display',serif;font-size:40px;color:var(--blue);line-height:1;margin-bottom:4px;}
+.kpi-l{font-size:11.5px;color:var(--t3);line-height:1.5;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.card{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:24px;}
+.card-eye{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.card-title{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:8px;}
+.card-body{font-size:12px;color:var(--t3);line-height:1.7;}
+.quote{background:var(--bdim);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:20px 24px;}
+.qt{font-family:'DM Serif Display',serif;font-size:16px;font-style:italic;color:var(--t2);line-height:1.55;margin-bottom:8px;}
+.qa{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);}
+@keyframes fu{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.a{opacity:0;animation:fu .5s ease forwards;}
+.d1{animation-delay:.05s;}.d2{animation-delay:.15s;}.d3{animation-delay:.25s;}.d4{animation-delay:.35s;}.d5{animation-delay:.45s;}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye a d1'>Project Overview</div>
+  <h1 class='a d2'>One platform. Two sides.<br><em>Infinite scale.</em></h1>
+  <p class='sub a d3'>Aram has spent years building an influencer platform with solid foundations. The market has changed. AI is now the infrastructure — not a feature. This rebuild starts from that truth.</p>
+  <div class='kpi-grid a d3'>
+    <div class='kpi'><div class='kpi-n'>2</div><div class='kpi-l'>sided marketplace — influencers and brands, one platform</div></div>
+    <div class='kpi'><div class='kpi-n'>14</div><div class='kpi-l'>AI features built into the core from day one</div></div>
+    <div class='kpi'><div class='kpi-n'>500+</div><div class='kpi-l'>campaigns one person can manage simultaneously</div></div>
+    <div class='kpi'><div class='kpi-n'>$32B</div><div class='kpi-l'>global market in 2025, growing to $70B+ by 2032</div></div>
+  </div>
+  <div class='cols a d4'>
+    <div class='card'>
+      <div class='card-eye'>The problem</div>
+      <div class='card-title'>Influencer marketing is buried in manual work</div>
+      <div class='card-body'>Every campaign requires dozens of human touchpoints — briefing clients, matching influencers, approving drafts, chasing payments, rescheduling, generating reports. One account manager today handles a fraction of what they should. The platform collapses that friction at every layer.</div>
+    </div>
+    <div class='card'>
+      <div class='card-eye'>The solution</div>
+      <div class='card-title'>AI handles everything that doesn't need a human</div>
+      <div class='card-body'>A two-sided marketplace where brands create campaigns in minutes, AI matches and contacts influencers automatically, drafts are reviewed by AI before any human sees them, dates are managed automatically, payments are tracked, and reports write themselves. One person runs hundreds of campaigns.</div>
+    </div>
+  </div>
+  <div class='quote a d5'>
+    <div class='qt'>&ldquo;We want to build the world&rsquo;s best influencer platform — so that when we go out and pitch to customers, it should be a service failure to say no.&rdquo;</div>
+    <div class='qa'>Aram Fili — Meeting, March 30 2026</div>
+  </div>
+</div></div>
+</body></html>"></iframe>
+
+<!-- SLIDE 2: THE MARKET -->
+<iframe class="sframe" id="sf-2" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--s2:#f0f2f6;--red:#c41a1a;--grn:#16a34a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);line-height:1.05;margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);max-width:700px;line-height:1.75;margin-bottom:32px;}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
+.stat-card{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:22px;position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.sc-blue::before{background:var(--blue);}
+.sc-red::before{background:var(--red);}
+.sc-grn::before{background:var(--grn);}
+.sn{font-family:'DM Serif Display',serif;font-size:44px;line-height:1;margin-bottom:5px;}
+.sc-blue .sn{color:var(--blue);}
+.sc-red .sn{color:var(--red);}
+.sc-grn .sn{color:var(--grn);}
+.sl{font-size:12px;color:var(--t3);line-height:1.55;}
+.ss{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--b2);margin-top:6px;text-transform:uppercase;letter-spacing:.1em;}
+.bar-section{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:22px 24px;margin-bottom:20px;}
+.bar-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:18px;}
+.brow{display:grid;grid-template-columns:200px 1fr 80px;align-items:center;gap:14px;margin-bottom:12px;}
+.brow:last-child{margin-bottom:0;}
+.blbl{font-size:12.5px;color:var(--t2);}
+.btrack{height:8px;background:var(--s2);border-radius:4px;overflow:hidden;}
+.bfill{height:100%;border-radius:4px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.bval{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3);text-align:right;}
+.insight-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.insight{background:var(--bdim);border:1px solid rgba(46,98,217,.15);border-radius:12px;padding:20px 22px;}
+.it{font-size:13px;font-weight:700;color:var(--tx);margin-bottom:6px;}
+.ib{font-size:12px;color:var(--t3);line-height:1.65;}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye'>Market Landscape</div>
+  <h1>The influencer economy is massive<br><em>— and its infrastructure is broken.</em></h1>
+  <p class='sub'>$32.55 billion in 2025, growing to $70+ billion by 2032. Yet the infrastructure running this market is spreadsheets, email chains, and manual approval loops. The platform opportunity is not finding a niche — it is fixing something fundamental.</p>
+  <div class='stat-grid'>
+    <div class='stat-card sc-blue'>
+      <div class='sn' id='m1'>0</div>
+      <div class='sl'>global influencer marketing market in 2025</div>
+      <div class='ss'>Statista · 2025 estimate</div>
+    </div>
+    <div class='stat-card sc-blue'>
+      <div class='sn'>$70B+</div>
+      <div class='sl'>projected market size by 2032 — more than 2× growth in 7 years</div>
+      <div class='ss'>Grand View Research · 2032 forecast</div>
+    </div>
+    <div class='stat-card sc-red'>
+      <div class='sn'>80%</div>
+      <div class='sl'>of influencer marketing operations involve significant manual work</div>
+      <div class='ss'>Industry estimate · 2025</div>
+    </div>
+  </div>
+  <div class='bar-section'>
+    <div class='bar-title'>Where existing platforms compete — and where the gaps are</div>
+    <div class='brow'><div class='blbl'>E-commerce brand tools</div><div class='btrack'><div class='bfill' data-w='82' style='background:var(--blue);'></div></div><div class='bval'>82%</div></div>
+    <div class='brow'><div class='blbl'>Discovery & search tools</div><div class='btrack'><div class='bfill' data-w='68' style='background:var(--blue);'></div></div><div class='bval'>68%</div></div>
+    <div class='brow'><div class='blbl'>Agency-facing platforms</div><div class='btrack'><div class='bfill' data-w='44' style='background:rgba(46,98,217,.5);'></div></div><div class='bval'>44%</div></div>
+    <div class='brow'><div class='blbl'>Creator / influencer-first tools</div><div class='btrack'><div class='bfill' data-w='14' style='background:#c41a1a;'></div></div><div class='bval'>14%</div></div>
+    <div class='brow'><div class='blbl'>AI-native platforms</div><div class='btrack'><div class='bfill' data-w='6' style='background:#c41a1a;'></div></div><div class='bval'>6%</div></div>
+  </div>
+  <div class='insight-row'>
+    <div class='insight'>
+      <div class='it'>The creator-side gap</div>
+      <div class='ib'>Every major platform is brand-centric. Influencers are treated as a searchable database — not as professionals with their own goals and needs. A platform that genuinely serves both sides equally has never been built.</div>
+    </div>
+    <div class='insight'>
+      <div class='it'>The AI-native gap</div>
+      <div class='ib'>Platforms like The Cirqle, GRIN, and Aspire have added AI features on top of old infrastructure. None were built AI-native from scratch. That is the open position — and the moment to claim it is now.</div>
+    </div>
+  </div>
+</div></div>
+<script>
+function cnt(id,t,p,s,d){var el=document.getElementById(id);if(!el)return;var st=null;function step(ts){if(!st)st=ts;var pr=Math.min((ts-st)/d,1);var e=1-Math.pow(1-pr,3);el.textContent=p+Math.round(e*t)+s;if(pr<1)requestAnimationFrame(step);}setTimeout(function(){requestAnimationFrame(step);},400);}
+cnt('m1',32,'$','.55B',1400);
+setTimeout(function(){document.querySelectorAll('.bfill').forEach(function(el){el.style.width=el.dataset.w+'%';});},400);
+</script>
+</body></html>"></iframe>
+
+<!-- SLIDE 3: COMPETITORS -->
+<iframe class="sframe" id="sf-3" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--s2:#f0f2f6;--red:#c41a1a;--grn:#16a34a;--gl:#16a34a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.2vw,40px);line-height:1.05;margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);max-width:700px;line-height:1.75;margin-bottom:28px;}
+.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
+.comp{background:var(--s1);border:1px solid var(--br);border-radius:12px;overflow:hidden;}
+.comp-head{padding:14px 16px;border-bottom:1px solid var(--br);background:#fff;}
+.comp-name{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:4px;}
+.comp-tag{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:10px;display:inline-block;}
+.t-b{background:rgba(46,98,217,.09);color:var(--blue);}
+.t-r{background:rgba(196,26,26,.08);color:var(--red);}
+.comp-body{padding:14px 16px;}
+.comp-feat{font-size:11px;color:var(--t3);line-height:1.75;}
+.comp-feat li{list-style:none;padding-left:14px;position:relative;margin-bottom:1px;}
+.comp-feat li::before{content:'·';position:absolute;left:2px;color:var(--blue);}
+.comp-price{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--b2);margin-top:10px;padding-top:10px;border-top:1px solid var(--br);}
+.matrix{background:#fff;border:1px solid var(--br);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(14,20,45,.06);}
+.mhead{display:grid;grid-template-columns:180px repeat(5,1fr);background:var(--s2);border-bottom:1px solid var(--br);}
+.mh{padding:9px 12px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);}
+.mh.hl{color:var(--blue);}
+.mrow{display:grid;grid-template-columns:180px repeat(5,1fr);border-bottom:1px solid rgba(0,0,0,.04);}
+.mrow:last-child{border-bottom:none;}
+.mc{padding:10px 12px;font-size:12px;display:flex;align-items:center;}
+.mc-lbl{color:var(--t2);font-weight:500;font-size:11.5px;}
+.chk{color:var(--gl);font-size:15px;font-weight:700;}
+.crs{color:#ddd;font-size:14px;}
+.prt{color:var(--blue);font-size:11px;font-weight:600;}
+.mrow:nth-child(odd){background:var(--s1);}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye'>Competitive Landscape — Who Exists Today</div>
+  <h1>Four real platforms. What they do,<br><em>and where they all fall short.</em></h1>
+  <p class='sub'>The Cirqle, GRIN, Aspire, and Upfluence are the dominant platforms in influencer marketing today. Each solves part of the problem for brands. None solve it for influencers. None were built AI-native.</p>
+
+  <div class='comp-grid'>
+    <div class='comp'>
+      <div class='comp-head'>
+        <div class='comp-name'>The Cirqle</div>
+        <span class='comp-tag t-b'>Performance-first</span>
+      </div>
+      <div class='comp-body'>
+        <ul class='comp-feat'>
+          <li>RoAS forecasting before booking</li>
+          <li>AI creator discovery engine</li>
+          <li>Turn content into paid ads</li>
+          <li>In-platform contracting</li>
+          <li>Usage rights management</li>
+          <li>Ambassador & affiliate programs</li>
+          <li>Organic + paid reporting</li>
+        </ul>
+        <div class='comp-price'>Custom pricing · Demo required · eCommerce-focused · Used by Loop, LYMA, ABOUT YOU</div>
+      </div>
+    </div>
+    <div class='comp'>
+      <div class='comp-head'>
+        <div class='comp-name'>GRIN</div>
+        <span class='comp-tag t-r'>E-commerce CRM</span>
+      </div>
+      <div class='comp-body'>
+        <ul class='comp-feat'>
+          <li>Shopify & WooCommerce native</li>
+          <li>Automated product seeding</li>
+          <li>Affiliate links & discount codes</li>
+          <li>Integrated email outreach</li>
+          <li>190M+ creator database</li>
+          <li>Content library & analytics</li>
+          <li>Sales tracking per creator</li>
+        </ul>
+        <div class='comp-price'>~$2,500/mo · Annual contract · DTC brands only · Used by SKIMS, Fenty Beauty</div>
+      </div>
+    </div>
+    <div class='comp'>
+      <div class='comp-head'>
+        <div class='comp-name'>Aspire</div>
+        <span class='comp-tag t-b'>Marketplace</span>
+      </div>
+      <div class='comp-body'>
+        <ul class='comp-feat'>
+          <li>1.2M vetted creator marketplace</li>
+          <li>Inbound creator applications</li>
+          <li>TikTok Spark Ads integration</li>
+          <li>Automated gifting via Shopify</li>
+          <li>CRM-like relationship tools</li>
+          <li>Campaign workflow automation</li>
+          <li>Agency services add-on</li>
+        </ul>
+        <div class='comp-price'>~$2,300/mo · Annual contract · US-heavy · Onboarding fee $2,000</div>
+      </div>
+    </div>
+    <div class='comp'>
+      <div class='comp-head'>
+        <div class='comp-name'>Upfluence</div>
+        <span class='comp-tag t-b'>Discovery-first</span>
+      </div>
+      <div class='comp-body'>
+        <ul class='comp-feat'>
+          <li>20+ discovery filters</li>
+          <li>350M+ searchable profiles</li>
+          <li>Amazon Attribution integration</li>
+          <li>Customer-influencer ID via CRM</li>
+          <li>Multi-platform campaigns</li>
+          <li>Social listening tools</li>
+          <li>PayPal & Stripe payouts</li>
+        </ul>
+        <div class='comp-price'>Custom module pricing · 12-month minimum · Module-based billing</div>
+      </div>
+    </div>
+  </div>
+
+  <div class='matrix'>
+    <div class='mhead'>
+      <div class='mh'>Feature</div>
+      <div class='mh'>The Cirqle</div>
+      <div class='mh'>GRIN</div>
+      <div class='mh'>Aspire</div>
+      <div class='mh'>Upfluence</div>
+      <div class='mh hl'>Aram's Platform</div>
+    </div>
+    <div class='mrow'><div class='mc mc-lbl'>AI-native from scratch</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Influencer-side mobile app</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='prt'>Partial</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>AI draft reviewer</div><div class='mc'><span class='prt'>Partial</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Conversational AI agent</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Trend scanner (TikTok/YT)</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Emergency stop button</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Influencer health score</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Multi-country admin mgmt</div><div class='mc'><span class='prt'>Partial</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='prt'>Partial</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>AI video report generator</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+    <div class='mrow'><div class='mc mc-lbl'>Accessible pricing (non-enterprise)</div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='crs'>✗</span></div><div class='mc'><span class='chk'>✓</span></div></div>
+  </div>
+
+  <!-- INSPIRATION SECTION -->
+  <div class='inspo-wrap'>
+    <div class='inspo-title'>
+      <span class='inspo-icon'>💡</span>
+      What we steal — the best of each platform, done better
+    </div>
+    <div class='inspo-grid'>
+      <div class='inspo-card'>
+        <div class='inspo-brand'>The Cirqle</div>
+        <div class='inspo-good'>
+          <span class='pill pill-g'>RoAS before you book</span>
+          <span class='pill pill-g'>Content → paid ads pipeline</span>
+        </div>
+        <div class='inspo-take'>
+          <span class='arrow'>→</span>
+          We take performance prediction further: personalised per influencer-brand pairing, not just category averages. And organic-to-paid is built into the draft approval flow.
+        </div>
+      </div>
+      <div class='inspo-card'>
+        <div class='inspo-brand'>GRIN</div>
+        <div class='inspo-good'>
+          <span class='pill pill-g'>Shopify-style e-com integration</span>
+          <span class='pill pill-g'>Sales attribution per creator</span>
+        </div>
+        <div class='inspo-take'>
+          <span class='arrow'>→</span>
+          We borrow the sales-per-creator attribution model and apply it to any product category — not just Shopify DTC. Every campaign ties directly to revenue.
+        </div>
+      </div>
+      <div class='inspo-card'>
+        <div class='inspo-brand'>Aspire</div>
+        <div class='inspo-good'>
+          <span class='pill pill-g'>Inbound creator marketplace</span>
+          <span class='pill pill-g'>Image-based aesthetic search</span>
+        </div>
+        <div class='inspo-take'>
+          <span class='arrow'>→</span>
+          We take the marketplace model but flip it: instead of influencers applying to brands, the AI agent proactively surfaces the right match to both sides and handles the intro.
+        </div>
+      </div>
+      <div class='inspo-card'>
+        <div class='inspo-brand'>Upfluence</div>
+        <div class='inspo-good'>
+          <span class='pill pill-g'>20+ discovery filters</span>
+          <span class='pill pill-g'>Customer-to-influencer ID</span>
+        </div>
+        <div class='inspo-take'>
+          <span class='arrow'>→</span>
+          We take the depth of filtering but make it conversational — instead of 20 dropdowns, you tell the AI what you need and it surfaces the right creators in seconds.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div></div>
+<style>
+.inspo-wrap{margin-top:16px;background:#f7f8fa;border:1px solid #e2e6ef;border-radius:12px;padding:18px 20px;}
+.inspo-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#5a6a82;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.inspo-icon{font-size:14px;}
+.inspo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.inspo-card{background:#fff;border:1px solid #e2e6ef;border-radius:10px;padding:14px;}
+.inspo-brand{font-size:11px;font-weight:700;color:#0d0d14;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f0f2f6;}
+.inspo-good{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;}
+.pill{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;display:inline-block;width:fit-content;}
+.pill-g{background:rgba(22,163,74,.08);color:#16a34a;border:1px solid rgba(22,163,74,.2);}
+.inspo-take{font-size:11px;color:#5a6a82;line-height:1.55;display:flex;gap:6px;}
+.arrow{color:#2E62D9;font-weight:700;flex-shrink:0;font-size:12px;}
+</style>
+</body></html>"></iframe>
+
+<!-- SLIDE 4: WHAT'S MISSING -->
+<iframe class="sframe" id="sf-4" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--bdim2:rgba(46,98,217,0.15);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--s2:#f0f2f6;--red:#c41a1a;--rdim:rgba(196,26,26,0.06);--grn:#16a34a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--red);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,38px);line-height:1.05;margin-bottom:6px;}
+h1 .r{color:var(--red);font-style:italic;}
+.sub{font-size:12.5px;color:var(--t3);max-width:720px;line-height:1.7;margin-bottom:24px;}
+
+/* GAP CARDS ROW */
+.gap-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+.gap-card{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:18px;border-top:3px solid var(--red);}
+.gc-head{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.gc-icon{font-size:16px;}
+.gc-title{font-size:12.5px;font-weight:700;color:var(--tx);line-height:1.2;}
+.gc-body{font-size:11px;color:var(--t3);line-height:1.6;margin-bottom:10px;}
+.gc-src{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--b2);text-transform:uppercase;letter-spacing:.08em;}
+
+/* MINI CHART inside card */
+.mini-chart{margin:10px 0;display:flex;flex-direction:column;gap:5px;}
+.mc-row{display:flex;align-items:center;gap:7px;}
+.mc-lbl{font-size:10px;color:var(--t3);width:70px;flex-shrink:0;line-height:1.3;}
+.mc-track{flex:1;height:7px;background:var(--s2);border-radius:3px;overflow:hidden;}
+.mc-fill{height:100%;border-radius:3px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.mc-val{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--t3);width:30px;text-align:right;flex-shrink:0;}
+
+/* DONUT */
+.donut-wrap{display:flex;align-items:center;gap:10px;margin:8px 0;}
+.donut{position:relative;width:56px;height:56px;flex-shrink:0;}
+.donut svg{transform:rotate(-90deg);}
+.donut-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:13px;font-weight:700;}
+.donut-legend{font-size:10.5px;color:var(--t3);line-height:1.6;}
+.donut-legend strong{color:var(--tx);font-size:11px;}
+
+/* SPLIT BAR */
+.split{display:flex;flex-direction:column;gap:5px;margin:8px 0;}
+.split-lbl{font-size:9.5px;color:var(--t3);margin-bottom:1px;}
+.split-bar{display:flex;border-radius:4px;overflow:hidden;height:20px;}
+.sp-a{display:flex;align-items:center;padding-left:6px;font-size:9.5px;font-weight:700;color:#fff;}
+.sp-b{flex:1;display:flex;align-items:center;padding-left:6px;font-size:9.5px;color:var(--t3);}
+
+/* BUBBLE ROW */
+.bubble-row{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0;}
+.bubble{font-size:9.5px;font-weight:600;padding:3px 8px;border-radius:20px;}
+.b-red{background:rgba(196,26,26,.08);color:var(--red);border:1px solid rgba(196,26,26,.15);}
+.b-grn{background:rgba(22,163,74,.08);color:var(--grn);border:1px solid rgba(22,163,74,.2);}
+.b-blue{background:var(--bdim);color:var(--blue);border:1px solid rgba(46,98,217,.2);}
+.b-grey{background:var(--s2);color:var(--t3);border:1px solid var(--br);}
+
+/* AI SECTION */
+.ai-section{background:rgba(46,98,217,.04);border:1px solid rgba(46,98,217,.18);border-radius:14px;padding:22px 26px;margin-bottom:20px;}
+.ai-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:20px;}
+.ai-title-block{}
+.ai-eye{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;}
+.ai-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--tx);line-height:1.15;}
+.ai-title em{font-style:italic;color:var(--blue);}
+.ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.ai-comp{background:#fff;border:1px solid var(--br);border-radius:10px;padding:14px;}
+.ai-comp-name{font-size:11px;font-weight:700;color:var(--tx);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--br);}
+.ai-feat{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px;font-size:10.5px;}
+.ai-feat-icon{flex-shrink:0;margin-top:1px;}
+.ai-feat.has{color:var(--grn);}
+.ai-feat.missing{color:var(--b2);}
+.ai-feat.ours{color:var(--blue);font-weight:600;}
+.ai-note{font-size:10.5px;color:var(--t3);margin-top:10px;line-height:1.5;font-style:italic;}
+
+/* DIFFERENTIATOR SECTION */
+.diff-section{background:#0d0d14;border-radius:14px;padding:24px 28px;color:#fff;}
+.diff-eye{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(46,98,217,.7);margin-bottom:8px;}
+.diff-title{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;line-height:1.15;margin-bottom:12px;}
+.diff-title em{font-style:italic;color:#6fa3f5;}
+.diff-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.diff-body{font-size:12px;color:rgba(255,255,255,.55);line-height:1.7;}
+.diff-body strong{color:#fff;}
+.diff-stat-row{display:flex;gap:16px;margin-top:12px;}
+.diff-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;flex:1;text-align:center;}
+.diff-stat-n{font-family:'DM Serif Display',serif;font-size:28px;color:#6fa3f5;line-height:1;margin-bottom:3px;}
+.diff-stat-l{font-size:10px;color:rgba(255,255,255,.35);line-height:1.4;}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye'>Six Structural Gaps — None of Them Small</div>
+  <h1>What every platform leaves open.<br><span class='r'>One platform fills all of them.</span></h1>
+  <p class='sub'>After studying The Cirqle, GRIN, Aspire, and Upfluence in depth — these are the consistent gaps every platform leaves open. They are not minor oversights. They are the architecture of the opportunity.</p>
+
+  <div class='gap-row'>
+
+    <!-- GAP 1: Influencer-centric -->
+    <div class='gap-card'>
+      <div class='gc-head'><span class='gc-icon'>👤</span><div class='gc-title'>Influencers treated as a database, not people</div></div>
+      <div class='donut-wrap'>
+        <div class='donut'>
+          <svg width='56' height='56' viewBox='0 0 56 56'>
+            <circle cx='28' cy='28' r='22' fill='none' stroke='#f0f2f6' stroke-width='8'/>
+            <circle cx='28' cy='28' r='22' fill='none' stroke='#c41a1a' stroke-width='8' stroke-dasharray='138 0' class='dr1'/>
+          </svg>
+          <div class='donut-label' style='color:var(--red);'>0%</div>
+        </div>
+        <div class='donut-legend'><strong>0 of 4 platforms</strong> have a genuine influencer-first experience. Every single one is built for brands.</div>
+      </div>
+      <div class='gc-body'>Influencers log in to fill forms, receive briefs, submit content. Nobody has built a platform that works for the influencer — helping them find campaigns, craft pitches, manage income. The influencer is passive. They should be the protagonist.</div>
+      <div class='gc-src'>Verified: Cirqle, GRIN, Aspire, Upfluence</div>
+    </div>
+
+    <!-- GAP 2: Reporting -->
+    <div class='gap-card'>
+      <div class='gc-head'><span class='gc-icon'>📊</span><div class='gc-title'>Reporting is always backwards-looking</div></div>
+      <div class='mini-chart'>
+        <div class='mc-row'><div class='mc-lbl'>Live alerts</div><div class='mc-track'><div class='mc-fill' data-w='0' style='background:var(--red);'></div></div><div class='mc-val'>None</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Predictive</div><div class='mc-track'><div class='mc-fill' data-w='12' style='background:var(--red);'></div></div><div class='mc-val'>Rare</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Post-campaign</div><div class='mc-track'><div class='mc-fill' data-w='100' style='background:#c8d0df;'></div></div><div class='mc-val'>All</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Our platform</div><div class='mc-track'><div class='mc-fill' data-w='100' style='background:var(--blue);'></div></div><div class='mc-val'>Live</div></div>
+      </div>
+      <div class='gc-body'>Every platform generates reports after campaigns end. Nobody pushes live intelligence: alerts when campaigns underperform, predictions before booking, or AI mid-campaign guidance.</div>
+      <div class='gc-src'>Standard across all reviewed platforms</div>
+    </div>
+
+    <!-- GAP 3: Multi-market -->
+    <div class='gap-card'>
+      <div class='gc-head'><span class='gc-icon'>🌍</span><div class='gc-title'>No real multi-market architecture</div></div>
+      <div class='mini-chart'>
+        <div class='mc-row'><div class='mc-lbl'>US market</div><div class='mc-track'><div class='mc-fill' data-w='95' style='background:#c8d0df;'></div></div><div class='mc-val'>95%</div></div>
+        <div class='mc-row'><div class='mc-lbl'>W. Europe</div><div class='mc-track'><div class='mc-fill' data-w='60' style='background:#c8d0df;'></div></div><div class='mc-val'>60%</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Other mkts</div><div class='mc-track'><div class='mc-fill' data-w='8' style='background:var(--red);'></div></div><div class='mc-val'>8%</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Country admin</div><div class='mc-track'><div class='mc-fill' data-w='0' style='background:var(--red);'></div></div><div class='mc-val'>None</div></div>
+      </div>
+      <div class='gc-body'>All major platforms are built for one market. Country-level admin, multi-currency invoicing, language-specific matching, market-by-market views — either absent or badly bolted on.</div>
+      <div class='gc-src'>Confirmed gap: Cirqle, GRIN, Aspire docs</div>
+    </div>
+
+    <!-- GAP 4: Crisis -->
+    <div class='gap-card'>
+      <div class='gc-head'><span class='gc-icon'>🔴</span><div class='gc-title'>No crisis infrastructure anywhere</div></div>
+      <div class='bubble-row'>
+        <span class='bubble b-red'>The Cirqle: ✗</span>
+        <span class='bubble b-red'>GRIN: ✗</span>
+        <span class='bubble b-red'>Aspire: ✗</span>
+        <span class='bubble b-red'>Upfluence: ✗</span>
+        <span class='bubble b-grn'>Aram's platform: ✓</span>
+      </div>
+      <div class='gc-body'>When something goes wrong — brand crisis, regulatory issue, influencer scandal — there is no mechanism to halt all campaigns simultaneously. Brands must contact each influencer individually. An emergency stop layer is missing in every platform.</div>
+      <div class='gc-src'>Gap confirmed across all four platforms</div>
+    </div>
+
+    <!-- GAP 5: Pricing -->
+    <div class='gap-card'>
+      <div class='gc-head'><span class='gc-icon'>💰</span><div class='gc-title'>Pricing locks out the entire middle market</div></div>
+      <div class='mini-chart'>
+        <div class='mc-row'><div class='mc-lbl'>GRIN</div><div class='mc-track'><div class='mc-fill' data-w='100' style='background:var(--red);'></div></div><div class='mc-val'>$2.5k/mo</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Aspire</div><div class='mc-track'><div class='mc-fill' data-w='92' style='background:var(--red);'></div></div><div class='mc-val'>$2.3k/mo</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Upfluence</div><div class='mc-track'><div class='mc-fill' data-w='80' style='background:var(--red);'></div></div><div class='mc-val'>Custom</div></div>
+        <div class='mc-row'><div class='mc-lbl'>Self-serve</div><div class='mc-track'><div class='mc-fill' data-w='0' style='background:var(--red);'></div></div><div class='mc-val'>None</div></div>
+      </div>
+      <div class='gc-body'>Annual contracts, demo required, no self-serve trial. The growing agency market — between boutique and enterprise — has no platform built for them at an accessible price.</div>
+      <div class='gc-src'>Capterra, G2, vendor sites · 2025–2026</div>
+    </div>
+
+    <!-- GAP 6: No differentiator feature -->
+    <div class='gap-card'>
+      <div class='gc-head'><span class='gc-icon'>⭐</span><div class='gc-title'>No single feature that creates lock-in</div></div>
+      <div class='split'>
+        <div class='split-lbl'>Switching cost on competing platforms</div>
+        <div class='split-bar'><div class='sp-a' style='width:15%;background:var(--red);'>Low</div><div class='sp-b' style='background:var(--s2);'>Easy to leave — data exports in a click</div></div>
+      </div>
+      <div class='split'>
+        <div class='split-lbl'>Switching cost with our Influencer Agent</div>
+        <div class='split-bar'><div class='sp-a' style='width:85%;background:var(--blue);'>Very High — agent knows you</div><div class='sp-b' style='background:var(--bdim);'></div></div>
+      </div>
+      <div class='gc-body'>No platform has a feature that makes leaving painful. Our Influencer Agent accumulates knowledge of each creator over time — making it something they can never get back if they leave.</div>
+      <div class='gc-src'>Raincode analysis — unique opportunity</div>
+    </div>
+  </div>
+
+  <!-- AI IS A FEATURE, NOT THE FOUNDATION -->
+  <div class='ai-section'>
+    <div class='ai-head'>
+      <div class='ai-title-block'>
+        <div class='ai-eye'>The biggest gap of all</div>
+        <div class='ai-title'>AI is a feature, not the foundation.<br><em>No platform was built AI-native from scratch.</em></div>
+      </div>
+    </div>
+    <div class='ai-grid'>
+      <div class='ai-comp'>
+        <div class='ai-comp-name'>The Cirqle</div>
+        <div class='ai-feat has'>✓ <span>RoAS forecasting</span></div>
+        <div class='ai-feat has'>✓ <span>AI creator search</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No AI workflow mgmt</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No conversational AI</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No draft reviewer</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No trend scanner</span></div>
+        <div class='ai-note'>AI added on top of brand-centric infrastructure. Not the core.</div>
+      </div>
+      <div class='ai-comp'>
+        <div class='ai-comp-name'>GRIN</div>
+        <div class='ai-feat has'>✓ <span>Basic AI matching</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No AI discovery (removed)</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No AI workflow</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No conversational AI</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No predictive analytics</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No draft review</span></div>
+        <div class='ai-note'>Recently removed cross-platform search. AI is minimal and worsening.</div>
+      </div>
+      <div class='ai-comp'>
+        <div class='ai-comp-name'>Aspire</div>
+        <div class='ai-feat has'>✓ <span>Image-based search</span></div>
+        <div class='ai-feat has'>✓ <span>AI outreach automation</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No AI content review</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No conversational AI</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No prediction engine</span></div>
+        <div class='ai-feat missing'>✗ <span style='color:var(--b2);'>No trend intelligence</span></div>
+        <div class='ai-note'>AI helps you find influencers. That is where it stops.</div>
+      </div>
+      <div class='ai-comp' style='border-color:rgba(46,98,217,.3);background:rgba(46,98,217,.03);'>
+        <div class='ai-comp-name' style='color:var(--blue);'>Aram's Platform ✓</div>
+        <div class='ai-feat ours'>✓ <span>AI campaign assistant (both sides)</span></div>
+        <div class='ai-feat ours'>✓ <span>AI draft reviewer</span></div>
+        <div class='ai-feat ours'>✓ <span>Performance prediction</span></div>
+        <div class='ai-feat ours'>✓ <span>Trend scanner — TikTok &amp; YouTube</span></div>
+        <div class='ai-feat ours'>✓ <span>Brand safety scanner</span></div>
+        <div class='ai-feat ours'>✓ <span>AI video report generator</span></div>
+        <div class='ai-note' style='color:var(--blue);'>Built AI-native. Every workflow runs through AI from day one.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE DIFFERENTIATOR -->
+  <div class='diff-section'>
+    <div class='diff-eye'>The Differentiator — Identified by Raincode</div>
+    <div class='diff-title'>The Influencer Agent: a personal AI manager<br><em>living inside the app for every single creator.</em></div>
+    <div class='diff-cols'>
+      <div>
+        <div class='diff-body'>Every platform treats influencers as a database to search. Aram&apos;s platform gives every creator a personal agent that knows them completely — their pricing, their style, their past campaigns, their income goals, what brands they convert with. When a campaign drops, the agent doesn&apos;t send a generic notification. It messages: <strong>&ldquo;Hey, Adidas just dropped a sneaker campaign. Based on your last Nike collab at 8.3% engagement, I think this is a strong fit — want me to write your pitch?&rdquo;</strong> The influencer says yes. The agent writes it, they tweak it, the agent submits it. All they do is talk to their agent.</div>
+        <div class='diff-stat-row'>
+          <div class='diff-stat'><div class='diff-stat-n'>∞</div><div class='diff-stat-l'>switching cost — agent accumulates knowledge over time</div></div>
+          <div class='diff-stat'><div class='diff-stat-n'>0</div><div class='diff-stat-l'>platforms treat influencers this way today</div></div>
+          <div class='diff-stat'><div class='diff-stat-n'>1st</div><div class='diff-stat-l'>mover advantage — build it now</div></div>
+        </div>
+      </div>
+      <div>
+        <div style='display:flex;flex-direction:column;gap:8px;'>
+          <div style='background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px 14px;'>
+            <div style='font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:5px;'>Every other platform</div>
+            <div style='font-size:11.5px;color:rgba(255,255,255,.45);line-height:1.6;'>✗ Influencer logs in and browses manually<br>✗ Generic &ldquo;New campaign&rdquo; notification<br>✗ Fills in forms to apply<br>✗ No context on why it fits them<br>✗ Switching loses nothing</div>
+          </div>
+          <div style='background:rgba(46,98,217,.15);border:1px solid rgba(46,98,217,.3);border-radius:8px;padding:12px 14px;'>
+            <div style='font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(111,163,245,.8);margin-bottom:5px;'>Aram&apos;s platform</div>
+            <div style='font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.6;'>✓ Agent reaches out with personalized pitch<br>✓ Explains exactly why the campaign fits<br>✓ Writes and submits the application<br>✓ Manages all deadlines and comms<br>✓ Switching means losing an agent who knows everything</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div></div>
+<script>
+setTimeout(function(){
+  // animate bar fills
+  document.querySelectorAll('.mc-fill').forEach(function(el){el.style.width=el.dataset.w+'%';});
+  // animate donut 1 — 0% (0 of 4 platforms)
+  var ring=document.querySelector('.dr1');
+  if(ring){
+    var circ=2*Math.PI*22;
+    ring.setAttribute('stroke-dasharray','0 '+circ);
+    ring.style.stroke='#f0f2f6';
+    // show 0%
+    var label=document.querySelector('.donut-label');
+    if(label)label.textContent='0%';
+  }
+},300);
+</script>
+</body></html>"></iframe>
+
+<!-- SLIDE 5: ARAM'S VISION -->
+<iframe class="sframe" id="sf-5" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);line-height:1.05;margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);max-width:700px;line-height:1.75;margin-bottom:28px;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.sec-title{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--t3);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--br);}
+.fi{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid rgba(0,0,0,.05);}
+.fi:last-child{border-bottom:none;}
+.fi-icon{width:34px;height:34px;border-radius:50%;background:var(--bdim);border:1px solid rgba(46,98,217,.18);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.fi-title{font-size:13px;font-weight:700;color:var(--tx);margin-bottom:3px;}
+.fi-desc{font-size:11.5px;color:var(--t3);line-height:1.55;}
+.quote-big{background:var(--bdim);border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:24px 28px;margin-top:24px;}
+.qt{font-family:'DM Serif Display',serif;font-size:17px;font-style:italic;color:var(--t2);line-height:1.55;margin-bottom:8px;}
+.qa{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye'>Aram's Vision — The Core Platform</div>
+  <h1>What Aram brings<br><em>to the table.</em></h1>
+  <p class='sub'>This is Aram's vision — built from years of running influencer campaigns, identifying what breaks, and understanding what both sides of the marketplace actually need. These are his requirements for the platform.</p>
+  <div class='cols'>
+    <div>
+      <div class='sec-title'>Marketplace & Campaigns</div>
+      <div class='fi'><div class='fi-icon'>🎥</div><div><div class='fi-title'>Video Pitch System</div><div class='fi-desc'>Influencers browse brands, tap a name, and send a video pitch directly. Advertisers receive, review, negotiate, accept or reject. Clean and direct.</div></div></div>
+      <div class='fi'><div class='fi-icon'>⚡</div><div><div class='fi-title'>Last-Minute Marketplace</div><div class='fi-desc'>Brands post urgent campaigns with short windows. Available influencers grab them. Creates urgency and fills gaps instantly.</div></div></div>
+      <div class='fi'><div class='fi-icon'>🔔</div><div><div class='fi-title'>Campaign Push Notifications</div><div class='fi-desc'>When a brand launches a campaign, every relevant influencer gets a notification. They browse, accept as-is, or pitch their own angle.</div></div></div>
+      <div class='fi'><div class='fi-icon'>📅</div><div><div class='fi-title'>Date Change Management</div><div class='fi-desc'>If an influencer reschedules, all relevant parties — brand, agency, other influencers in the same campaign — are notified automatically. No phone calls.</div></div></div>
+      <div class='fi'><div class='fi-icon'>🔴</div><div><div class='fi-title'>Emergency Stop Button</div><div class='fi-desc'>One button pauses all active campaigns instantly and sends push, email, and SMS to all relevant parties. No platform has this.</div></div></div>
+    </div>
+    <div>
+      <div class='sec-title'>Operations & Intelligence</div>
+      <div class='fi'><div class='fi-icon'>⭐</div><div><div class='fi-title'>Rating & Review System</div><div class='fi-desc'>After a campaign, brands rate influencers. Almost nobody does this properly. An influencer with 38 five-star reviews from known brands is a completely different pitch to a new advertiser.</div></div></div>
+      <div class='fi'><div class='fi-icon'>🌍</div><div><div class='fi-title'>Country & Admin Management</div><div class='fi-desc'>Admins assigned per country or region. Campaign performance viewable market by market. Scales internationally without structural chaos.</div></div></div>
+      <div class='fi'><div class='fi-icon'>💰</div><div><div class='fi-title'>Invoicing & Payment System</div><div class='fi-desc'>Built-in invoicing between all parties. Brands get invoices. Influencers get paid. Automated and auditable.</div></div></div>
+      <div class='fi'><div class='fi-icon'>📊</div><div><div class='fi-title'>Live Reporting Dashboard</div><div class='fi-desc'>Real-time campaign data. Reach, engagement, conversions. Viewable by day, week, month, or campaign. No waiting for end-of-campaign PDFs.</div></div></div>
+      <div class='fi'><div class='fi-icon'>💼</div><div><div class='fi-title'>Sales Account Tracking</div><div class='fi-desc'>Whoever brings in the client gets attributed all revenue from that account. Full tracking of revenue generated per account owner.</div></div></div>
+    </div>
+  </div>
+  <div class='quote-big'>
+    <div class='qt'>&ldquo;The functionality has to be so good that one person can handle five hundred campaigns simultaneously. That&rsquo;s the benchmark. Everything else follows from that.&rdquo;</div>
+    <div class='qa'>Aram Fili — March 30, 2026</div>
+  </div>
+</div></div>
+</body></html>"></iframe>
+
+<!-- SLIDE 6: ARAM'S FEATURES -->
+<iframe class="sframe" id="sf-6" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--red:#c41a1a;--rdim:rgba(196,26,26,0.06);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.2vw,40px);line-height:1.05;margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);max-width:700px;line-height:1.75;margin-bottom:24px;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.feat{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:18px;position:relative;overflow:hidden;}
+.tag-badge{position:absolute;top:12px;right:12px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:10px;}
+.tag-aram{background:rgba(46,98,217,.1);color:var(--blue);}
+.tag-ai{background:rgba(196,26,26,.08);color:var(--red);}
+.feat-icon{font-size:20px;margin-bottom:9px;display:block;}
+.feat-title{font-size:13px;font-weight:700;color:var(--tx);margin-bottom:5px;line-height:1.3;padding-right:46px;}
+.feat-desc{font-size:11px;color:var(--t3);line-height:1.6;}
+.story{background:var(--rdim);border:1px solid rgba(196,26,26,.14);border-radius:12px;padding:20px 24px;}
+.story-title{font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.story-body{font-size:12px;color:var(--t3);line-height:1.65;font-style:italic;}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye'>Aram's Feature List — Every Requirement</div>
+  <h1>The full picture of<br><em>what Aram wants built.</em></h1>
+  <p class='sub'>From the platform Aram already has and from the meeting on March 30 — every feature requirement, plus the AI capabilities Aram specifically asked for. Nothing left out.</p>
+  <div class='feat-grid'>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>📁</span><div class='feat-title'>Influencer Portfolio</div><div class='feat-desc'>Profile page showing previous collaborations, content style, audience data, and platform reach. Browsable by brands before committing.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>💲</span><div class='feat-title'>Influencer Price List Setup</div><div class='feat-desc'>Each influencer sets own pricing per platform and format. Package deals: buy 5 Instagram + 5 TikTok + 5 YouTube posts at 20% off.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>🔗</span><div class='feat-title'>Platform Connection</div><div class='feat-desc'>Connect Instagram, TikTok, YouTube in one click. Stats pull in automatically. No manual entry of follower counts or engagement rates.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>🎯</span><div class='feat-title'>Budget Goals — Both Sides</div><div class='feat-desc'>Influencers set income targets and track progress. Brands set campaign budgets and see spending in real time with projections.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>📝</span><div class='feat-title'>Draft Submission & Reminders</div><div class='feat-desc'>Influencers submit drafts before publishing. Brands review and approve. Automated reminders when deadlines approach with no submission.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>👥</span><div class='feat-title'>Follow Feed</div><div class='feat-desc'>Users follow specific influencers and brands and see their updates, recent campaigns, and activity. Lightweight social layer on the marketplace.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>💡</span><div class='feat-title'>Influencer Recommendation Tips</div><div class='feat-desc'>Platform surfaces recommendations to brands when building a campaign — based on category fit, past performance, ratings, and budget.</div></div>
+    <div class='feat'><span class='tag-badge tag-ai'>AI Feature</span><span class='feat-icon'>🤖</span><div class='feat-title'>AI Draft Reviewer</div><div class='feat-desc'>AI analyzes every draft before the brand sees it. Catches: wrong environment, white text on white, audio issues, wrong discount code, pacing too fast. No human needed to catch problems.</div></div>
+    <div class='feat'><span class='tag-badge tag-ai'>AI Feature</span><span class='feat-icon'>💬</span><div class='feat-title'>AI Chatbot — Ask Anything</div><div class='feat-desc'>Users on both sides ask questions in plain language in the app. &ldquo;How do I set up this campaign?&rdquo; &ldquo;How is my Adidas campaign performing right now?&rdquo;</div></div>
+    <div class='feat'><span class='tag-badge tag-ai'>AI Feature</span><span class='feat-icon'>📱</span><div class='feat-title'>Trend Scanner — TikTok & YouTube</div><div class='feat-desc'>Platform continuously scans TikTok and YouTube to identify what's working — trending formats, sounds, visual styles gaining traction in different markets.</div></div>
+    <div class='feat'><span class='tag-badge tag-ai'>AI Feature</span><span class='feat-icon'>🎯</span><div class='feat-title'>Manus AI / Paid Ads Integration</div><div class='feat-desc'>Manus AI was acquired by Meta for influencer analytics. Investigate integration to enable seamless boosting of top posts into paid ads from within the platform.</div></div>
+    <div class='feat'><span class='tag-badge tag-aram'>Aram</span><span class='feat-icon'>📈</span><div class='feat-title'>Reporting Dashboard</div><div class='feat-desc'>Live campaign performance. Reach, engagement, clicks, conversions, cost per result. Filterable by influencer, platform, country, or brand.</div></div>
+  </div>
+  <div class='story'>
+    <div class='story-title'>⚠️ The real story that explains why the AI draft reviewer is non-negotiable</div>
+    <div class='story-body'>A major Swedish influencer was briefed for a Lyko campaign: calm, natural environment. She filmed in her bathroom with the washing machine running — white text on white tiles, inaudible audio. Nobody caught it before submission. Aram had to push back personally, it became a conflict, and she only redid it because he framed it as a technical argument. That entire situation should be caught automatically before any human is involved.</div>
+  </div>
+</div></div>
+</body></html>"></iframe>
+
+<!-- SLIDE 7: RAINCODE IDEAS -->
+<iframe class="sframe" id="sf-7" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--bdim2:rgba(46,98,217,0.14);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--grn:#16a34a;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;overflow-y:auto;padding:52px 0 80px;}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 60px;}
+.eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.eye::before{content:'';width:24px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.2vw,40px);line-height:1.05;margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);max-width:700px;line-height:1.75;margin-bottom:24px;}
+.rc-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(46,98,217,.1);color:var(--blue);border:1px solid rgba(46,98,217,.2);border-radius:10px;padding:2px 8px;margin-right:6px;flex-shrink:0;}
+.idea-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.idea{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:18px 22px;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;transition:border-color .2s;}
+.idea:hover{border-color:rgba(46,98,217,.3);}
+.idea-icon{font-size:22px;margin-top:2px;}
+.idea-title{font-size:13.5px;font-weight:700;color:var(--tx);margin-bottom:6px;display:flex;align-items:center;flex-wrap:wrap;gap:6px;line-height:1.3;}
+.idea-body{font-size:12px;color:var(--t3);line-height:1.65;}
+.idea-why{font-size:11px;color:var(--blue);margin-top:5px;font-weight:600;}
+.flywheel{background:var(--bdim);border:1px solid rgba(46,98,217,.2);border-radius:12px;padding:22px 26px;}
+.fw-title{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:8px;}
+.fw-body{font-size:12px;color:var(--t3);line-height:1.65;}
+</style></head><body>
+<div id='root'><div class='wrap'>
+  <div class='eye'>Raincode Ideas — What We're Adding</div>
+  <h1>What we bring that<br><em>nobody has thought of yet.</em></h1>
+  <p class='sub'>These are Raincode's contributions — features and systems that go beyond what Aram asked for, based on our experience building AI products and studying the competitive landscape carefully.</p>
+  <div class='idea-list'>
+    <div class='idea'>
+      <div class='idea-icon'>🤝</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>AI Campaign Assistant — Conversational, Both Sides</div>
+        <div class='idea-body'>Not a chatbot. A true assistant living inside the platform for both sides. For influencers: feels like a personal manager — messages you when a campaign drops, helps write your pitch, reviews your draft, handles the submission. For brands: feels like a senior account manager — tells you proactively when something is over or underperforming, suggests next steps, lets you ask anything about your data in plain language. Like calling your airline and it just handles the rebooking — no chain of calls, no emails.</div>
+        <div class='idea-why'>→ Once an influencer has an agent who knows them, switching platforms is painful. This is the retention mechanism.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>🔬</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>Performance Prediction Before Booking</div>
+        <div class='idea-body'>Before a brand commits to an influencer, the platform shows a predicted performance range — estimated reach, expected engagement, projected cost per result — based on that influencer's history and similar past campaigns in the same product category. Brands see expected outcomes before spending anything. The Cirqle has RoAS forecasting. We go further: personalized predictions per influencer-brand pairing, not just category averages.</div>
+        <div class='idea-why'>→ Dramatically increases confidence in new bookings. Reduces friction of trying someone unfamiliar.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>❤️</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>Influencer Health Score</div>
+        <div class='idea-body'>Beyond star ratings, every influencer gets a dynamic score from multiple signals: on-time delivery rate, draft approval rate on first submission, communication responsiveness, brief compliance rate, and campaign completion rate. Brands see this upfront. Creates a real accountability system and gives brands a risk signal before committing budget. Influencers with high scores get surfaced first. Low scores trigger coaching tips from the AI agent.</div>
+        <div class='idea-why'>→ Turns the platform into a quality-control layer that improves as data accumulates.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>🎨</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>Campaign Mood Board + AI Brief Compliance</div>
+        <div class='idea-body'>Brands build a mood board when creating a campaign — reference images, example videos, color direction, tone of voice. When influencers submit drafts, AI compares the content against the mood board and brief, and flags mismatches automatically. &ldquo;Background doesn&apos;t match the outdoor setting in the brief.&rdquo; &ldquo;Tone feels more comedic than the lifestyle direction requested.&rdquo; Brief compliance becomes measurable and automatic rather than a personal argument.</div>
+        <div class='idea-why'>→ The Lyko bathroom incident becomes impossible to reach a human reviewer.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>🔊</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>Micro-Influencer Amplification Network</div>
+        <div class='idea-body'>When a main influencer posts, a pre-approved network of smaller amplification accounts reposts it on a set schedule. The platform manages all of it: main post goes live, amplification network notified automatically, everyone reposts within the defined window. Coordinated reach at scale with zero manual coordination. Aram did something similar in his blockchain days — this is built natively into the platform.</div>
+        <div class='idea-why'>→ Multiplies effective reach without increasing budget. No competitor has this.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>🛡️</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>Brand Safety Scanner</div>
+        <div class='idea-body'>Before an influencer is matched to a brand, AI scans their recent public content for anything that might create a problem — competitor associations, controversial statements, inappropriate content. Brands set their own safety thresholds. Risks get flagged before anyone has invested time negotiating, not after the deal is already done.</div>
+        <div class='idea-why'>→ Eliminates one of the most common reasons campaigns go wrong before they start.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>📈</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>Proactive Sales Intelligence for Internal Team</div>
+        <div class='idea-body'>AI monitors all campaigns and generates signals for Aram&apos;s internal sales team. &ldquo;This client&apos;s campaign is overperforming — good moment to pitch an expansion.&rdquo; &ldquo;This influencer has been inactive 30 days — consider a reactivation push.&rdquo; &ldquo;This brand&apos;s campaign ends in 12 days — prepare a renewal proposal.&rdquo; No relationship goes cold without someone knowing exactly what move to make next.</div>
+        <div class='idea-why'>→ Turns the platform into a revenue engine for Aram's own business, not just a tool for clients.</div>
+      </div>
+    </div>
+    <div class='idea'>
+      <div class='idea-icon'>🎬</div>
+      <div>
+        <div class='idea-title'><span class='rc-badge'>Raincode</span>AI Video Report Generator</div>
+        <div class='idea-body'>Instead of a static PDF, the platform generates a short AI-narrated video summary of campaign results — animated data, performance highlights, top-performing content, next-step recommendations. A marketing director presses play and gets the full picture in two minutes. Shareable internally to boards and leadership. No platform does this. Every client will reference it in future pitches. Aram raised this idea himself — we're making it a core feature.</div>
+        <div class='idea-why'>→ Makes reporting feel like a premium service, not a spreadsheet.</div>
+      </div>
+    </div>
+  </div>
+  <div class='flywheel'>
+    <div class='fw-title'>The Data Flywheel — The Real Long-Term Asset (Raincode)</div>
+    <div class='fw-body'>Every campaign that runs through the platform teaches it something. What content performed, what didn't, which influencers overdeliver for which brand categories, what briefs produce great results. Over time this becomes a proprietary dataset that no competitor starting from zero can replicate. This is the moat. It must be built and owned internally — never fed into third-party AI systems. The platform that owns the best data on influencer performance wins the market. And it compounds every month.</div>
+  </div>
+</div></div>
+</body></html>"></iframe>
+
+<!-- SLIDE 8: THE DIFFERENTIATOR — native div, no srcdoc -->
+<div class="sframe" id="sf-8" style="background:#fff;overflow-y:auto;font-family:'DM Sans',sans-serif;color:#0d0d14;"></div>
+<script>
+(function(){
+  var s8 = document.getElementById('sf-8');
+  s8.innerHTML = '<style>' +
+    '.s8wrap{max-width:1040px;margin:0 auto;padding:88px 60px 80px;}' +
+    '.s8eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#2E62D9;margin-bottom:12px;display:flex;align-items:center;gap:10px;}' +
+    '.s8eye::before{content:"";width:24px;height:2px;background:#2E62D9;display:block;}' +
+    '.s8h1{font-family:"DM Serif Display",serif;font-size:clamp(26px,3.2vw,40px);line-height:1.05;margin-bottom:8px;color:#0d0d14;}' +
+    '.s8h1 em{font-style:italic;color:#2E62D9;}' +
+    '.s8sub{font-size:13px;color:#5a6a82;max-width:700px;line-height:1.75;margin-bottom:24px;}' +
+    '.s8big{background:rgba(46,98,217,.07);border:1px solid rgba(46,98,217,.2);border-left:4px solid #2E62D9;border-radius:0 14px 14px 0;padding:28px 32px;margin-bottom:20px;}' +
+    '.s8btag{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#2E62D9;margin-bottom:12px;}' +
+    '.s8btitle{font-family:"DM Serif Display",serif;font-size:22px;line-height:1.2;color:#0d0d14;margin-bottom:12px;}' +
+    '.s8bbody{font-size:13px;color:#2d3748;line-height:1.75;max-width:860px;}' +
+    '.s8bbody strong{color:#0d0d14;}' +
+    '.s8comp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}' +
+    '.s8bad{background:#fff8f8;border:1px solid rgba(196,26,26,.14);border-radius:12px;padding:20px 22px;}' +
+    '.s8good{background:rgba(46,98,217,.07);border:1px solid rgba(46,98,217,.18);border-radius:12px;padding:20px 22px;}' +
+    '.s8clbl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;}' +
+    '.s8bad .s8clbl{color:#c41a1a;}' +
+    '.s8good .s8clbl{color:#2E62D9;}' +
+    '.s8ci{display:flex;gap:10px;margin-bottom:9px;font-size:12.5px;line-height:1.5;}' +
+    '.s8bad .s8ci{color:#5a6a82;}' +
+    '.s8good .s8ci{color:#2d3748;}' +
+    '.s8stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}' +
+    '.s8stat{background:#f7f8fa;border:1px solid #e2e6ef;border-radius:12px;padding:22px;text-align:center;}' +
+    '.s8sn{font-family:"DM Serif Display",serif;font-size:42px;color:#2E62D9;line-height:1;margin-bottom:6px;}' +
+    '.s8sl{font-size:11.5px;color:#5a6a82;line-height:1.5;}' +
+    '</style>' +
+    '<div class="s8wrap">' +
+      '<div class="s8eye">The Feature That Changes Everything</div>' +
+      '<h1 class="s8h1">The Influencer Agent &#8212;<br><em>a personal AI manager in the app.</em></h1>' +
+      '<p class="s8sub">Every other platform treats influencers as a database to search. Aram\'s platform gives every influencer something nobody else has. This is the feature that makes the platform impossible to leave.</p>' +
+      '<div class="s8big">' +
+        '<div class="s8btag">The standout differentiator &#8212; identified by Raincode</div>' +
+        '<div class="s8btitle">Every influencer gets a personal AI agent that works for them &#8212; proactively, conversationally, around the clock.</div>' +
+        '<div class="s8bbody">The agent knows the influencer completely &#8212; their prices, availability, preferred content style, past campaigns, income goals, what brands they convert with. When a campaign drops, the agent doesn\'t send a generic notification. It messages them: <strong>&#8220;Hey, Adidas just dropped a sneaker campaign. Based on your last Nike collab at 8.3% engagement, I think this is a strong fit. Want me to write your pitch?&#8221;</strong> The influencer says yes. The agent writes it, they tweak it, the agent submits it. When the brand approves, the agent handles onboarding, sets reminders, reviews the draft, and gives a performance summary. The influencer never logs into a dashboard. They just talk to their agent.</div>' +
+      '</div>' +
+      '<div class="s8comp">' +
+        '<div class="s8bad">' +
+          '<div class="s8clbl">Every other platform today</div>' +
+          '<div class="s8ci"><span>&#x2717;</span>Influencers log in and browse campaigns manually</div>' +
+          '<div class="s8ci"><span>&#x2717;</span>Generic &#8220;New campaign available&#8221; notification</div>' +
+          '<div class="s8ci"><span>&#x2717;</span>Influencers fill in forms to apply</div>' +
+          '<div class="s8ci"><span>&#x2717;</span>No context on why a campaign fits their profile</div>' +
+          '<div class="s8ci"><span>&#x2717;</span>Switching platforms loses nothing meaningful</div>' +
+          '<div class="s8ci"><span>&#x2717;</span>Influencer is passive &#8212; a database entry</div>' +
+        '</div>' +
+        '<div class="s8good">' +
+          '<div class="s8clbl">Aram\'s platform</div>' +
+          '<div class="s8ci"><span>&#x2713;</span>Agent reaches out with specific, personalized opportunities</div>' +
+          '<div class="s8ci"><span>&#x2713;</span>Agent explains exactly why this campaign fits their profile</div>' +
+          '<div class="s8ci"><span>&#x2713;</span>Agent helps write and submit the pitch</div>' +
+          '<div class="s8ci"><span>&#x2713;</span>Agent manages deadlines, reminders, and all comms</div>' +
+          '<div class="s8ci"><span>&#x2713;</span>Switching means losing an agent who knows everything about you</div>' +
+          '<div class="s8ci"><span>&#x2713;</span>Influencer is the protagonist &#8212; the agent works for them</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="s8stats">' +
+        '<div class="s8stat"><div class="s8sn">&#8734;</div><div class="s8sl">switching cost &#8212; the agent accumulates knowledge over time that no competitor can replicate</div></div>' +
+        '<div class="s8stat"><div class="s8sn">0</div><div class="s8sl">platforms treat influencers this way today. A completely unoccupied position in the market.</div></div>' +
+        '<div class="s8stat"><div class="s8sn">1st</div><div class="s8sl">mover advantage in AI-native influencer representation &#8212; build it now before the window closes</div></div>' +
+      '</div>' +
+    '</div>';
+})();
+</script>
+
+<!-- SLIDE 9: HOW WE BUILD IT — PHASES -->
+<div class="sframe" id="sf-9" style="background:#fff;overflow-y:auto;font-family:'DM Sans',sans-serif;color:#0d0d14;"></div>
+<script>
+(function(){
+  var s9 = document.getElementById('sf-9');
+  s9.innerHTML = '<style>' +
+    '@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap");' +
+    '.pw{max-width:1040px;margin:0 auto;padding:88px 60px 80px;}' +
+    '.peye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#2E62D9;margin-bottom:10px;display:flex;align-items:center;gap:10px;}' +
+    '.peye::before{content:"";width:24px;height:2px;background:#2E62D9;display:block;}' +
+    '.ph1{font-family:"DM Serif Display",serif;font-size:clamp(28px,3.5vw,44px);line-height:1.05;margin-bottom:6px;color:#0d0d14;}' +
+    '.ph1 em{font-style:italic;color:#2E62D9;}' +
+    '.psub{font-size:13px;color:#5a6a82;max-width:700px;line-height:1.75;margin-bottom:28px;}' +
+    '.phases{display:flex;flex-direction:column;gap:12px;}' +
+    '.phase{display:grid;grid-template-columns:220px 1fr;border-radius:12px;overflow:hidden;border:1px solid #e2e6ef;}' +
+    '.phase-left{padding:22px 24px;display:flex;flex-direction:column;justify-content:center;}' +
+    '.phase-right{padding:22px 28px;background:#fff;border-left:1px solid #e2e6ef;}' +
+    '.phase-label{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7;}' +
+    '.phase-name{font-family:"DM Serif Display",serif;font-size:20px;line-height:1.15;color:#fff;}' +
+    '.phase-tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:8px;letter-spacing:.06em;}' +
+    '.phase-desc{font-size:12.5px;color:#2d3748;line-height:1.65;margin-bottom:10px;}' +
+    '.phase-items{display:flex;flex-wrap:wrap;gap:5px;}' +
+    '.pi{font-size:10.5px;padding:3px 9px;border-radius:10px;font-weight:500;}' +
+    '.pi-blue{background:rgba(46,98,217,.08);color:#2E62D9;border:1px solid rgba(46,98,217,.18);}' +
+    '.pi-grey{background:#f7f8fa;color:#5a6a82;border:1px solid #e2e6ef;}' +
+    '.pi-red{background:rgba(196,26,26,.07);color:#c41a1a;border:1px solid rgba(196,26,26,.15);}' +
+    '.pi-green{background:rgba(22,163,74,.07);color:#16a34a;border:1px solid rgba(22,163,74,.18);}' +
+    '.pi-amber{background:rgba(201,122,0,.07);color:#c97a00;border:1px solid rgba(201,122,0,.18);}' +
+    '.phase-note{font-size:11px;color:#8896A8;margin-top:8px;font-style:italic;}' +
+    '.total-bar{margin-top:16px;background:rgba(46,98,217,.05);border:1px solid rgba(46,98,217,.15);border-radius:12px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}' +
+    '.total-label{font-size:12px;font-weight:700;color:#0d0d14;}' +
+    '.total-items{display:flex;gap:24px;flex-wrap:wrap;}' +
+    '.ti{text-align:center;}' +
+    '.ti-n{font-family:"DM Serif Display",serif;font-size:28px;color:#2E62D9;line-height:1;margin-bottom:2px;}' +
+    '.ti-l{font-size:10px;color:#5a6a82;}' +
+    '</style>' +
+    '<div class="pw">' +
+      '<div class="peye">How We Build It</div>' +
+      '<h1 class="ph1">Five phases. Each one<br><em>builds on the last.</em></h1>' +
+      '<p class="psub">The platform is delivered in separately contracted phases. No phase is started until the previous one is signed off. Aram only commits budget one step at a time.</p>' +
+      '<div class="phases">' +
+
+        // POC
+        '<div class="phase">' +
+          '<div class="phase-left" style="background:#2E62D9;">' +
+            '<div class="phase-label" style="color:rgba(255,255,255,.6);">Entry point</div>' +
+            '<div class="phase-name">POC</div>' +
+            '<div class="phase-name" style="font-size:14px;font-family:DM Sans,sans-serif;color:rgba(255,255,255,.75);margin-top:4px;">Proof of Concept</div>' +
+            '<div class="phase-tag" style="background:rgba(255,255,255,.15);color:#fff;">Fixed price</div>' +
+          '</div>' +
+          '<div class="phase-right">' +
+            '<div class="phase-desc">A working app on AWS staging &#8212; not slides, not Figma. Aram can log in, create a campaign, apply as an influencer, submit a draft, and see the AI reviewer respond. This is the gate before MVP budget is committed.</div>' +
+            '<div class="phase-items">' +
+              '<span class="pi pi-blue">Auth &amp; profiles</span>' +
+              '<span class="pi pi-blue">Core campaign flow</span>' +
+              '<span class="pi pi-blue">Draft submission</span>' +
+              '<span class="pi pi-blue">AI Draft Reviewer &#8212; core</span>' +
+              '<span class="pi pi-blue">Push notifications</span>' +
+              '<span class="pi pi-blue">AWS infrastructure</span>' +
+              '<span class="pi pi-grey">Instagram only</span>' +
+            '</div>' +
+            '<div class="phase-note">&#8594; Gate: all 5 core flows working on iOS, Android &amp; web. Aram signs off before MVP begins.</div>' +
+          '</div>' +
+        '</div>' +
+
+        // MVP
+        '<div class="phase">' +
+          '<div class="phase-left" style="background:#1a3f9e;">' +
+            '<div class="phase-label" style="color:rgba(255,255,255,.6);">Phase 1</div>' +
+            '<div class="phase-name">MVP</div>' +
+            '<div class="phase-name" style="font-size:14px;font-family:DM Sans,sans-serif;color:rgba(255,255,255,.75);margin-top:4px;">Full Platform</div>' +
+            '<div class="phase-tag" style="background:rgba(255,255,255,.15);color:#fff;">Same team, same codebase</div>' +
+          '</div>' +
+          '<div class="phase-right">' +
+            '<div class="phase-desc">The complete platform. Every feature from the brief goes live. TikTok + YouTube added. Full AI reviewer including brief match. Production-ready on iOS, Android, and web.</div>' +
+            '<div class="phase-items">' +
+              '<span class="pi pi-blue">All 3 social platforms</span>' +
+              '<span class="pi pi-blue">Full campaign marketplace</span>' +
+              '<span class="pi pi-blue">Full AI Draft Reviewer</span>' +
+              '<span class="pi pi-blue">Influencer tools &amp; pricing</span>' +
+              '<span class="pi pi-blue">Scheduling &amp; date management</span>' +
+              '<span class="pi pi-blue">Emergency stop</span>' +
+              '<span class="pi pi-blue">Ratings &amp; reviews</span>' +
+              '<span class="pi pi-blue">Invoicing &amp; payments</span>' +
+              '<span class="pi pi-blue">Live reporting dashboard</span>' +
+              '<span class="pi pi-blue">Country &amp; admin management</span>' +
+              '<span class="pi pi-blue">Sales account tracking</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        // Phase 2A
+        '<div class="phase">' +
+          '<div class="phase-left" style="background:#0d7c4f;">' +
+            '<div class="phase-label" style="color:rgba(255,255,255,.6);">Phase 2A</div>' +
+            '<div class="phase-name">Standard AI</div>' +
+            '<div class="phase-name" style="font-size:14px;font-family:DM Sans,sans-serif;color:rgba(255,255,255,.75);margin-top:4px;">Lower-risk AI layer</div>' +
+            '<div class="phase-tag" style="background:rgba(255,255,255,.15);color:#fff;">Can start before MVP is fully live</div>' +
+          '</div>' +
+          '<div class="phase-right">' +
+            '<div class="phase-desc">Five AI features that build on the data starting to accumulate in Phase 1. Lower R&amp;D risk. Can begin 4&#8211;6 weeks before MVP fully launches.</div>' +
+            '<div class="phase-items">' +
+              '<span class="pi pi-green">Health Score</span>' +
+              '<span class="pi pi-green">Brand Safety Scanner</span>' +
+              '<span class="pi pi-green">AI Matching Engine</span>' +
+              '<span class="pi pi-green">Proactive Sales Intelligence</span>' +
+              '<span class="pi pi-green">Performance Prediction</span>' +
+              '<span class="pi pi-green">Amplification Network</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        // Phase 2B
+        '<div class="phase">' +
+          '<div class="phase-left" style="background:#c97a00;">' +
+            '<div class="phase-label" style="color:rgba(255,255,255,.6);">Phase 2B</div>' +
+            '<div class="phase-name">Advanced AI</div>' +
+            '<div class="phase-name" style="font-size:14px;font-family:DM Sans,sans-serif;color:rgba(255,255,255,.75);margin-top:4px;">Complex AI &amp; R&amp;D</div>' +
+            '<div class="phase-tag" style="background:rgba(255,255,255,.15);color:#fff;">Higher R&amp;D &#8212; started after 2A</div>' +
+          '</div>' +
+          '<div class="phase-right">' +
+            '<div class="phase-desc">The most complex AI work. The Influencer Agent, trend intelligence, mood board compliance, and AI video reports. These require architectural spikes and carry higher build risk &#8212; hence separated from 2A.</div>' +
+            '<div class="phase-items">' +
+              '<span class="pi pi-amber">AI Agent &#8212; both sides</span>' +
+              '<span class="pi pi-amber">Trend Scanner</span>' +
+              '<span class="pi pi-amber">Mood Board + Brief Compliance</span>' +
+              '<span class="pi pi-amber">AI Video Report Generator</span>' +
+            '</div>' +
+            '<div class="phase-note">&#8594; The Influencer Agent and Video Generator both include R&amp;D spikes. Built last, after the data foundation is solid.</div>' +
+          '</div>' +
+        '</div>' +
+
+        // Phase 3
+        '<div class="phase">' +
+          '<div class="phase-left" style="background:#2d3748;">' +
+            '<div class="phase-label" style="color:rgba(255,255,255,.6);">Phase 3</div>' +
+            '<div class="phase-name">Intelligence</div>' +
+            '<div class="phase-name" style="font-size:14px;font-family:DM Sans,sans-serif;color:rgba(255,255,255,.75);margin-top:4px;">&amp; Scale</div>' +
+            '<div class="phase-tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);">Scoped after Phase 2</div>' +
+          '</div>' +
+          '<div class="phase-right">' +
+            '<div class="phase-desc">Dependent on having accumulated enough live campaign data from Phases 1 and 2. This is where the proprietary data advantage compounds and the platform becomes truly unreplicable.</div>' +
+            '<div class="phase-items">' +
+              '<span class="pi pi-grey">Data Flywheel &amp; proprietary training</span>' +
+              '<span class="pi pi-grey">Trend prediction engine</span>' +
+              '<span class="pi pi-grey">ML-powered matching upgrade</span>' +
+              '<span class="pi pi-grey">Manus AI / paid ads integration (TBD)</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+      '</div>' +
+
+      '<div class="total-bar">' +
+        '<div class="total-label">Full platform &#8212; POC through Phase 2B</div>' +
+        '<div class="total-items">' +
+          '<div class="ti"><div class="ti-n">5</div><div class="ti-l">phases, each separately contracted</div></div>' +
+          '<div class="ti"><div class="ti-n">3</div><div class="ti-l">developers, same team throughout</div></div>' +
+          '<div class="ti"><div class="ti-n">1</div><div class="ti-l">codebase, no handovers</div></div>' +
+        '</div>' +
+      '</div>' +
+
+    '</div>';
+})();
+</script>
+
+<!-- SLIDE 10: CLARIFYING QUESTIONS -->
+<div class="sframe" id="sf-10" style="background:#fff;overflow-y:auto;font-family:'DM Sans',sans-serif;color:#0d0d14;"></div>
+<script>
+(function(){
+  var s10 = document.getElementById('sf-10');
+  s10.innerHTML = '<style>' +
+    '@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap");' +
+    '.qw{max-width:1040px;margin:0 auto;padding:88px 60px 80px;}' +
+    '.qeye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#c41a1a;margin-bottom:10px;display:flex;align-items:center;gap:10px;}' +
+    '.qeye::before{content:"";width:24px;height:2px;background:#c41a1a;display:block;}' +
+    '.qh1{font-family:"DM Serif Display",serif;font-size:clamp(28px,3.5vw,44px);line-height:1.05;margin-bottom:6px;color:#0d0d14;}' +
+    '.qh1 em{font-style:italic;color:#c41a1a;}' +
+    '.qsub{font-size:13px;color:#5a6a82;max-width:700px;line-height:1.75;margin-bottom:28px;}' +
+    '.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}' +
+    '.q-card{background:#f7f8fa;border:1px solid #e2e6ef;border-radius:12px;padding:20px 22px;border-left:3px solid #c41a1a;}' +
+    '.q-num{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;color:#c41a1a;margin-bottom:6px;letter-spacing:.1em;}' +
+    '.q-topic{font-size:12px;font-weight:700;color:#0d0d14;margin-bottom:6px;}' +
+    '.q-text{font-size:12px;color:#5a6a82;line-height:1.65;}' +
+    '.q-why{font-size:11px;color:#2E62D9;margin-top:8px;font-weight:600;}' +
+    '.q-banner{background:rgba(46,98,217,.05);border:1px solid rgba(46,98,217,.15);border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:16px;}' +
+    '.q-banner-icon{font-size:28px;flex-shrink:0;}' +
+    '.q-banner-text{font-size:13px;color:#2d3748;line-height:1.65;}' +
+    '.q-banner-text strong{color:#0d0d14;}' +
+    '</style>' +
+    '<div class="qw">' +
+      '<div class="qeye">Before We Start</div>' +
+      '<h1 class="qh1">Seven questions that need<br><em>answers before POC kicks off.</em></h1>' +
+      '<p class="qsub">These are not blockers to the conversation &#8212; they are things we need to resolve before writing code. Some have external lead times that make them urgent.</p>' +
+      '<div class="q-grid">' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">01 &#8212; URGENT</div>' +
+          '<div class="q-topic">Meta / Instagram app review</div>' +
+          '<div class="q-text">Has the Instagram Business API app review been submitted yet? Meta takes 4&#8211;8 weeks to approve. This is the only external dependency that can block MVP Sprint 1&#8211;2. It must be submitted during the POC sprint.</div>' +
+          '<div class="q-why">&#8594; If not submitted: social integrations slip by 2 months minimum.</div>' +
+        '</div>' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">02 &#8212; URGENT</div>' +
+          '<div class="q-topic">TikTok for Business API access</div>' +
+          '<div class="q-text">Does Aram already have a TikTok for Business account and developer app approved? TikTok API requires app approval for content and stats access. Needed before POC Week 1.</div>' +
+          '<div class="q-why">&#8594; TikTok approval can take 2&#8211;4 weeks. Start this now.</div>' +
+        '</div>' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">03</div>' +
+          '<div class="q-topic">Payment geography at launch</div>' +
+          '<div class="q-text">Which countries are brands and influencers in at launch? Stripe Connect payout capabilities vary &#8212; Swedish SEPA vs. other markets affects the Stripe account type and onboarding flow.</div>' +
+          '<div class="q-why">&#8594; Determines invoicing structure and payout setup from day one.</div>' +
+        '</div>' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">04</div>' +
+          '<div class="q-topic">Invoicing entity</div>' +
+          '<div class="q-text">Does Aram&#8217;s company act as merchant of record for all transactions? Or do brands invoice influencers directly? This determines whether influencers need Stripe Connect Express accounts.</div>' +
+          '<div class="q-why">&#8594; Changes the payment architecture in MVP Sprint 5&#8211;6.</div>' +
+        '</div>' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">05</div>' +
+          '<div class="q-topic">Draft video file size limits</div>' +
+          '<div class="q-text">What is the maximum expected draft video file size? This affects S3 upload configuration, CloudFront limits, and whether video transcoding is needed in MVP or can be deferred.</div>' +
+          '<div class="q-why">&#8594; A 4GB file needs a different upload flow than a 200MB file.</div>' +
+        '</div>' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">06</div>' +
+          '<div class="q-topic">Data sovereignty from day one?</div>' +
+          '<div class="q-text">The brief states training data must never leave to third-party providers. Is this a hard constraint from POC day one &#8212; affecting how AI interactions are logged &#8212; or only when Phase 3 custom model training begins?</div>' +
+          '<div class="q-why">&#8594; Affects how we configure AWS Bedrock logging from the start.</div>' +
+        '</div>' +
+
+        '<div class="q-card">' +
+          '<div class="q-num">07</div>' +
+          '<div class="q-topic">Mood board gate &#8212; hard or soft?</div>' +
+          '<div class="q-text">In Phase 2B, when the AI compares a draft against the brand&#8217;s mood board and flags a mismatch &#8212; is the draft blocked until the influencer fixes it, or is it a warning they can override?</div>' +
+          '<div class="q-why">&#8594; Hard gate vs. soft warning is a UX and trust decision, not just technical.</div>' +
+        '</div>' +
+
+      '</div>' +
+      '<div class="q-banner">' +
+        '<div class="q-banner-icon">&#128337;</div>' +
+        '<div class="q-banner-text"><strong>Questions 1 and 2 are time-sensitive.</strong> Meta and TikTok API approvals run in parallel to development &#8212; they cannot be started after POC. If we wait, the MVP social integrations slip by months through no fault of the development team. These need to be actioned this week.</div>' +
+      '</div>' +
+    '</div>';
+})();
+</script>
+
+<!-- SLIDE 11: NEXT STEPS -->
+<iframe class="sframe" id="sf-11" srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'>
+<link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap' rel='stylesheet'>
+<style>
+:root{--blue:#2E62D9;--bdim:rgba(46,98,217,0.07);--tx:#0d0d14;--t2:#2d3748;--t3:#5a6a82;--br:#e2e6ef;--b2:#c8d0df;--s1:#f7f8fa;--s2:#f0f2f6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:#fff;color:var(--tx);overflow:hidden;}
+#root{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px;}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before,.eyebrow::after{content:'';width:28px;height:2px;background:var(--blue);}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,60px);line-height:1.0;text-align:center;margin-bottom:14px;color:var(--tx);}
+h1 em{font-style:italic;color:var(--blue);}
+.sub{font-size:13px;color:var(--t3);text-align:center;max-width:520px;margin:0 auto 44px;line-height:1.75;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;max-width:920px;margin-bottom:32px;}
+.step{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:26px 20px;text-align:left;position:relative;}
+.step-num{font-family:'DM Serif Display',serif;font-size:48px;color:var(--blue);opacity:.12;line-height:1;margin-bottom:10px;}
+.step-icon{font-size:24px;margin-bottom:10px;}
+.step-title{font-size:13px;font-weight:700;color:var(--tx);margin-bottom:6px;line-height:1.3;}
+.step-desc{font-size:11.5px;color:var(--t3);line-height:1.6;}
+.step-ph{background:rgba(46,98,217,.06);border:1px dashed rgba(46,98,217,.2);border-radius:6px;padding:8px 10px;margin-top:10px;font-size:10px;color:rgba(46,98,217,.5);font-style:italic;}
+.bottom-row{display:flex;gap:40px;justify-content:center;align-items:center;flex-wrap:wrap;}
+.br-item{text-align:center;}
+.br-label{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--b2);margin-bottom:4px;}
+.br-val{font-size:13.5px;font-weight:600;color:var(--t2);}
+.divv{width:1px;height:30px;background:var(--br);}
+</style></head><body>
+<div id='root'>
+  <div class='eyebrow'>Next Steps</div>
+  <h1>From conversation<br><em>to build.</em></h1>
+  <p class='sub'>Four steps from where we are today to a running platform. Simple, sequenced, no commitments made before the foundations are right.</p>
+  <div class='steps-grid'>
+    <div class='step'>
+      <div class='step-num'>1</div>
+      <div class='step-icon'>🎯</div>
+      <div class='step-title'>Refine Features &amp; Business Plan</div>
+      <div class='step-desc'>We work through the full feature list together — confirming priorities, cutting what is not essential for launch, and aligning on the business model. The output is a shared, agreed definition of the platform.</div>
+    </div>
+    <div class='step'>
+      <div class='step-num'>2</div>
+      <div class='step-icon'>🖥️</div>
+      <div class='step-title'>Present the Plan with a Prototype</div>
+      <div class='step-desc'>With final requirements locked, Raincode presents a full delivery plan alongside a working prototype of the core experience. Aram sees exactly what gets built before any agreement is signed.</div>
+    </div>
+    <div class='step'>
+      <div class='step-num'>3</div>
+      <div class='step-icon'>✍️</div>
+      <div class='step-title'>Finalise the Agreement</div>
+      <div class='step-desc'>Scope, timeline, and commercial terms are confirmed. The agreement is signed. Each phase is contracted separately — no obligation beyond the phase in front of us at any time.</div>
+    </div>
+    <div class='step'>
+      <div class='step-num'>4</div>
+      <div class='step-icon'>🚀</div>
+      <div class='step-title'>Kick Off</div>
+      <div class='step-desc'>The team is assembled, the environment is set up, and the first sprint begins. From this point, Raincode delivers. Same three developers, same codebase, from POC to full AI platform.</div>
+    </div>
+  </div>
+  <div class='bottom-row'>
+    <div class='br-item'><div class='br-label'>Client</div><div class='br-val'>Aram Fili</div></div>
+    <div class='divv'></div>
+    <div class='br-item'><div class='br-label'>Built by</div><div class='br-val'>Raincode</div></div>
+    <div class='divv'></div>
+    <div class='br-item'><div class='br-label'>Contact</div><div class='br-val'>Lajjo Strand &amp; David Rasmusson</div></div>
+    <div class='divv'></div>
+    <div class='br-item'><div class='br-label'>Website</div><div class='br-val'>raincode.tech</div></div>
+  </div>
+</div>
+</body></html>"></iframe>
+
+</div>
+
+<script>
+var cur=0,N=12;
+var pcts=['8%','17%','25%','33%','42%','50%','58%','67%','75%','83%','92%','100%'];
+function sw(n){
+  if(n===cur)return;
+  document.getElementById('sf-'+cur).classList.remove('active');
+  document.querySelectorAll('.ntab')[cur].classList.remove('active');
+  cur=n;
+  document.getElementById('sf-'+cur).classList.add('active');
+  document.querySelectorAll('.ntab')[cur].classList.add('active');
+  document.getElementById('mpbf').style.width=pcts[cur];
+}
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&e.key==='ArrowRight'){e.preventDefault();sw(Math.min(cur+1,N-1));}
+  if(e.shiftKey&&e.key==='ArrowLeft'){e.preventDefault();sw(Math.max(cur-1,0));}
+});
+</script>
+</body>
+</html>
